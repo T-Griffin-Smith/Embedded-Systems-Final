@@ -156,7 +156,7 @@ void PWMSetup(void) {
 	
 	RCC->AHB2ENR |= 0x01;			//enable GPIOA clock 
 	GPIOA->MODER &= (0xFFFFFFFC);		//mask PA0 to 00
-	GPIOA->MODER |= (0x00000002);		//configure PA1=01 and PA0=10 for AF mode
+	GPIOA->MODER |= (0x00000002);		//configure PA0=10 for AF mode
 	GPIOA->AFR[0] &= (0xFFFFFFF0);		//mask bit[3:0]=00 	
 	GPIOA->AFR[0] |= (0x00000001);		//configure bit[3:0]=001, AF1 selected
 	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;	//enable timer 2 module
